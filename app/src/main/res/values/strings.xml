@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Lab_1.1</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="n_82_n_8223">Трандашир Юлія\nГрупа ІО-82\nЗК ІО-8223</string>
+</resources>
