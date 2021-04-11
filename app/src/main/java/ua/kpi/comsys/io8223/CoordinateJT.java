@@ -2,7 +2,7 @@ package ua.kpi.comsys.io8223;
 
 import android.annotation.SuppressLint;
 
-public class Coordinate {
+public class CoordinateJT {
 
     private final Direction currentDir;
     private String worldLetter;
@@ -10,14 +10,14 @@ public class Coordinate {
     private final int minute;
     private final int second;
 
-    public Coordinate(){
+    public CoordinateJT(){
         currentDir = Direction.LATITUDE;
         worldLetter = "N";
         degree = minute = second = 0;
     }
 
     @SuppressLint("DefaultLocale")
-    public Coordinate(int deg, int min, int sec, Direction dir) throws Exception {
+    public CoordinateJT(int deg, int min, int sec, Direction dir) throws Exception {
         currentDir = dir;
         if (dir == Direction.LATITUDE){
             if (deg >= -90 && deg <= 90){
@@ -78,9 +78,9 @@ public class Coordinate {
         return String.format("%f° %s", Math.abs(getFloatSigned()), worldLetter);
     }
 
-    public Coordinate getMiddleCoordinate(Coordinate a, Coordinate b) throws Exception {
+    public CoordinateJT getMiddleCoordinate(CoordinateJT a, CoordinateJT b) throws Exception {
         if (a.getCurrentDir() == b.getCurrentDir()){
-            return new Coordinate((a.getDegree() + b.getDegree()) / 2,
+            return new CoordinateJT((a.getDegree() + b.getDegree()) / 2,
                     (a.getMinute() + b.getMinute()) / 2,
                     (a.getSecond() + b.getSecond()) / 2,
                     a.getCurrentDir());
@@ -90,7 +90,7 @@ public class Coordinate {
         }
     }
 
-    public Coordinate getMiddleCoordinate(Coordinate second) throws Exception {
+    public CoordinateJT getMiddleCoordinate(CoordinateJT second) throws Exception {
         return getMiddleCoordinate(this, second);
     }
 
